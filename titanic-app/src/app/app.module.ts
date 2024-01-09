@@ -3,30 +3,28 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+// import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule, routes } from './app-routing.module';
+import { PassengerService } from './passenger.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes),
-
     HttpClientModule,
-    FormsModule,
+    // RouterModule.forRoot(routes),
+
+    // FormsModule,
     CommonModule,
-    AppRoutingModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [PassengerService],
 })
 export class AppModule { }

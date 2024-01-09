@@ -1,38 +1,33 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+// ici le nom de la collec et donc le model de données
+const lesPassagers = require('./Passager');
 
 const app = express();
+// Mise en marche du serveur sur le port 3000
 const port = 3000;
+app.listen(port, () => {
+  console.log(`HEY Serveur en cours d'exécution sur http://localhost:${port}`);
+});
+
+app.use(express.json());
 
 // Connexion à MongoDB
-mongoose.connect('mongodb://localhost:27017/titanicDB', { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'Erreur de connexion à MongoDB :'));
-db.once('open', function () {
-  console.log('Connecté à MongoDB');
-});
-
-// Schéma de données MongoDB
-const passengerSchema = new mongoose.Schema({
-  // Définissez la structure des données en fonction de votre fichier CSV
-  // Exemple : name: String, age: Number, ...
-});
-
-const Passenger = mongoose.model('Passenger', passengerSchema);
+// mongoose.connect('mongodb://localhost:27017/passengerTitanic', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/passengerTitanic', { useNewUrlParser: true, useUnifiedTopology: true });
+// const db = mongoose.connection;
 
 
-// API pour récupérer les données depuis la base de données
-app.get('/api/passengers', async (req, res) => {
+// Pour récupérer les données depuis la base de données
+  app.get('/lesPassagers', async (req, res) => {
   try {
-    const passengers = await Passenger.find();
-    res.json(passengers);
+    const passenger = await lesPassagers.find();
+    console.log("Hellooooo",passenger);
+    res.json(passenger);
   } catch (err) {
+    console.log("erreur");
     res.status(500).json({ message: err.message });
   }
 });
 
-app.listen(port, () => {
-  console.log(`Serveur en cours d'exécution sur http://localhost:${port}`);
-});
+
