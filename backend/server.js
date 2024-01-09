@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// ici le nom de la collec et donc le model de données
+// ici le nom de la collec 
 const lesPassagers = require('./Passager');
 
 const app = express();
@@ -13,17 +13,17 @@ app.listen(port, () => {
 app.use(express.json());
 
 // Connexion à MongoDB
-// mongoose.connect('mongodb://localhost:27017/passengerTitanic', { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect('mongodb://localhost/passengerTitanic', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/passengerTitanic', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://localhost/passengerTitanic', { useNewUrlParser: true, useUnifiedTopology: true });
 // const db = mongoose.connection;
 
 
 // Pour récupérer les données depuis la base de données
   app.get('/lesPassagers', async (req, res) => {
   try {
-    const passenger = await lesPassagers.find();
-    console.log("Hellooooo",passenger);
-    res.json(passenger);
+    const Passager = await lesPassagers.find();
+    console.log("Hellooooo",Passager);
+    res.json(Passager);
   } catch (err) {
     console.log("erreur");
     res.status(500).json({ message: err.message });

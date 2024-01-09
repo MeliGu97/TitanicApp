@@ -2,4 +2,9 @@
 <nav>
   <a routerLink="/">Accueil</a>
 </nav>
+<ul>
+  <li *ngFor="let passager of Passager">
+    {{ Passager.Name }} - {{ Passager.Age }}
+  </li>
+</ul>
 <router-outlet></router-outlet>

@@ -7,14 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 // import { NgModule } from '@angular/core';
 
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 import { AppRoutingModule, routes } from './app-routing.module';
 import { PassengerService } from './passenger.service';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
+    // HomeComponent,
   ],
   imports: [
     BrowserModule,

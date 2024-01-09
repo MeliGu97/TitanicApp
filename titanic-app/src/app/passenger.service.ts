@@ -11,8 +11,9 @@ export class PassengerService {
   // getPassengers(): Observable<Passenger[]> {
   //   return this.http.get<Passenger[]>(this.apiUrl);
   // }
+  
   // Essaie pour récupere les données
-  getPassengers() {
+  getPassager() {
     return this.http.get('/api/lesPassagers');
   }
 }

@@ -13,14 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./passenger.component.scss'],
 })
 export class PassengerComponent implements OnInit {
-  passengers: any = [];
+  Passager: any = [];
+  // lesPassagers: any;
 
   constructor(private passengerService: PassengerService) {}
 
   // on recupere les passagers
   ngOnInit(): void {
-    this.passengerService.getPassengers().subscribe((data) => {
-      this.passengers = data;
+    this.passengerService.getPassager().subscribe((data) => {
+      this.Passager = data;
     });
   }
 }
