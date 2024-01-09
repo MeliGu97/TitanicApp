@@ -2,9 +2,17 @@
 <nav>
   <a routerLink="/">Accueil</a>
 </nav>
+<h2>Les passagers : </h2>
 <ul>
   <li *ngFor="let passager of Passager">
     {{ Passager.Name }} - {{ Passager.Age }}
+  </li>
+</ul>
+
+<h2>Les utilisateurs : </h2>
+<ul>
+  <li *ngFor="let User of Users">
+    {{ User.nom }} - {{ User.prenom }}
   </li>
 </ul>
 <router-outlet></router-outlet>

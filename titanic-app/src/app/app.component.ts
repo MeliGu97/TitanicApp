@@ -13,4 +13,13 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'titanic-app';
   Passager: any = [];
+  User: any = [];
+  Users!: any[];
+
+  ngOnInit() {
+    // Récupérer les données depuis la base de données
+    this.User.find().then((data: any) => {
+      this.Users = data;
+    });
+  }
 }
