@@ -1,3 +1,10 @@
-<titanic-passenger></titanic-passenger>
+<nav>
+    <button class="nav-item" *ngIf="authService.isAuth(); else notAuthenticated" (click)="router.navigate(['/login'])">Se deconnecter</button>
+    <button class="nav-item" *ngIf="authService.isAuth();" (click)="router.navigate(['/page-membre'])">page-membre</button>
+    
+    <ng-template #notAuthenticated>
+        <button class="nav-item" (click)="router.navigate(['/login'])">Se connecter</button>
+    </ng-template>
+</nav>
 
 <router-outlet></router-outlet>
