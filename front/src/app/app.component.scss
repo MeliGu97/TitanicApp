@@ -1,10 +1,21 @@
+.nav{
+    margin: 10px;
+    // float: right;
+    // background-color: aqua;
+}
 .nav-item {
     cursor: pointer;
     color: black;
+    font-size: 15px;
     background-color: transparent;
     border: none;
     margin: 10px;
 }
 .nav-item :hover{
-    color: blue;
+    color: rgb(87, 157, 255);
+}
+
+.photoLargest{
+    width: 100%;
+    height: auto;
 }

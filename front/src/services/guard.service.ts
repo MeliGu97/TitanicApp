@@ -23,22 +23,25 @@ export class GuardService implements CanActivate {
     const passwordToMatch = 'toto';
   
     // Vérif de l'auth
-    const isAuth = this.authService.auth(emailToMatch, passwordToMatch);
+    const isAuthenticated = this.authService.auth(emailToMatch, passwordToMatch);
   
-    // Si l'utilisateur n'est pas authentifié 
-    // bon finalement ne sert pas a grand chose car affihce le errorMessage de login component
-    if (!isAuth) {
-      this.openDialog('Pas autorisé');
-      // utilisateur actualise la page de login
-      this.router.navigate(['/login']);
-    } else {
+    // qu'est ce qui se passe ici PARDI
+    if (isAuthenticated) {
       // Si les info sont ok, affiche ok
       // Par contre ici c'est ok ça s'affiche bien
-      this.openDialog('Vous pouvez entrer toto. Bienvenue !');
+      // this.router.navigate(['/page-membre']);
+      this.openDialog('Bienvenue !');
+      console.log("hola la compagnie tu peux venir") 
+    } else {
+      this.openDialog('Vous n\'êtes pas autorisé à accèder à la page');
+      // utilisateur actualise la page de login
+      this.router.navigate(['/login']);
+      console.log("POPOPOP CEST PAS BON")
+      
     }
   
     // Retourne l'état d'authentification
-    return isAuth; 
+    return isAuthenticated; 
   }
 
     openDialog(message: string): void {

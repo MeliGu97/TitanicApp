@@ -1,10 +1,11 @@
 <nav>
     <button class="nav-item" *ngIf="authService.isAuth(); else notAuthenticated" (click)="router.navigate(['/login'])">Se deconnecter</button>
-    <button class="nav-item" *ngIf="authService.isAuth();" (click)="router.navigate(['/page-membre'])">page-membre</button>
+    <!-- Ne vérifie rien du tout dès qu'on appuie hop nous envoie sur la page membre -->
+    <button class="nav-item" *ngIf="authService.isAuth();">page-membre</button>
     
     <ng-template #notAuthenticated>
         <button class="nav-item" (click)="router.navigate(['/login'])">Se connecter</button>
     </ng-template>
 </nav>
-
+<!-- <img class="photoLargest" src="../iceberg.jpg" alt="Photo iceberg" /> -->
 <router-outlet></router-outlet>

@@ -23,6 +23,7 @@ export class LoginComponent {
 
     if (isAuthenticated) {
       this.router.navigate(['/page-membre']);
+      console.log("hola la compagnie tu peux venir") 
     } else {
       this.errorMessage = 'L\'authentification a échoué. Veuillez vérifier vos informations de connexion.';
     }

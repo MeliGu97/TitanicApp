@@ -1,51 +1,57 @@
 <H2>Liste des passagers du Titanic</H2>
+
+<section *ngIf="authService.isAuth(); notAuthenticated">
+  <article>
+    <div class="header"> <!-- pas encore fonctionnel -->
+      <input type="text" placeholder="Rechercher par nom" id="searchInput">
+
+      <div class="container-filters filters">
+          <label class="toggle-switch">
+              Femme ♀️ 
+              <input type="checkbox" id="genderFilter">
+              <span class="toggle-slider"></span>
+              Homme ♂️
+          </label>
+        </div>
+        <div class="container-filters filters">
+          <label class="toggle-switch">
+              Décédé 💔
+              <input type="checkbox" id="survivorFilter">
+              <span class="toggle-slider"></span>
+              Survivant ❤️
+          </label>
+      </div>
+    </div>
+  </article>
+
+
+  <article>
+    <div class="passenger-card" *ngFor="let passager of passagers">
+      <h2>{{ passager.Name }}</h2>
+      <div class="info">
+        <!-- <p><strong>PassengerId:</strong> {{ passager.PassengerId }}</p> -->
+        <p>
+          <strong>Survived:</strong> {{ passager.Survived }}
+          <strong>Pclass:</strong> {{ passager.Pclass }}
+        </p>
+        <p>
+          <strong>Sex:</strong> {{ passager.Sex }}
+          <strong>Age:</strong> {{ passager.Age }}
+        </p>
+        <!-- <p><strong>SibSp:</strong> {{ passager.SibSp }}</p>
+        <p><strong>Parch:</strong> {{ passager.Parch }}</p>
+        <p><strong>Ticket:</strong> {{ passager.Ticket }}</p>
+        <p><strong>Fare:</strong> {{ passager.Fare }}</p>
+        <p><strong>Cabin:</strong> {{ passager.Cabin }}</p>
+        <p><strong>Embarked:</strong> {{ passager.Embarked }}</p> -->
+      </div>
+    </div>  
+  </article>
+</section>
+
 <!-- pour afficher touuuutes les données dans une liste -->
-<!-- <ul>
-    <li *ngFor="let passager of passagers">
-      {{ passager.Name }} - {{ passager.Age }} ans - {{ passager.Survived }}
-    </li>
-</ul> -->
-
-<div class="header"> <!-- pas encore fonctionnel -->
-  <input type="text" placeholder="Rechercher par nom" id="searchInput">
-
-  <div class="container-filters filters">
-      <label class="toggle-switch">
-          Femme ♀️ 
-          <input type="checkbox" id="genderFilter">
-          <span class="toggle-slider"></span>
-          Homme ♂️
-      </label>
-    </div>
-    <div class="container-filters filters">
-      <label class="toggle-switch">
-          Décédé 💔
-          <input type="checkbox" id="survivorFilter">
-          <span class="toggle-slider"></span>
-          Survivant ❤️
-      </label>
-  </div>
-</div>
-
-<article>
-  <div class="passenger-card" *ngFor="let passager of passagers">
-    <h2>{{ passager.Name }}</h2>
-    <div class="info">
-      <!-- <p><strong>PassengerId:</strong> {{ passager.PassengerId }}</p> -->
-      <p>
-        <strong>Survived:</strong> {{ passager.Survived }}
-        <strong>Pclass:</strong> {{ passager.Pclass }}
-      </p>
-      <p>
-        <strong>Sex:</strong> {{ passager.Sex }}
-        <strong>Age:</strong> {{ passager.Age }}
-      </p>
-      <!-- <p><strong>SibSp:</strong> {{ passager.SibSp }}</p>
-      <p><strong>Parch:</strong> {{ passager.Parch }}</p>
-      <p><strong>Ticket:</strong> {{ passager.Ticket }}</p>
-      <p><strong>Fare:</strong> {{ passager.Fare }}</p>
-      <p><strong>Cabin:</strong> {{ passager.Cabin }}</p>
-      <p><strong>Embarked:</strong> {{ passager.Embarked }}</p> -->
-    </div>
-  </div>  
-</article>
+<ul #notAuthenticated>
+  <li *ngFor="let passager of passagers">
+    {{ passager.Name }}
+  </li>
+</ul>
