@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { PassengerComponent } from "../passenger/passenger.component";
+import { AuthService } from '../services/auth.service';
 
 @Component({
     selector: 'titanic-page-membre',
@@ -11,5 +12,5 @@ import { PassengerComponent } from "../passenger/passenger.component";
     imports: [CommonModule, RouterOutlet, PassengerComponent],
 })
 export class PageMembreComponent {
-
+    constructor(public authService: AuthService) {}
 }

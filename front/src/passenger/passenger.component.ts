@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PassengerService } from '../services/passenger.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from '../services/auth.service';
-
 
 @Component({
   selector: 'titanic-passenger',
@@ -16,7 +14,7 @@ import { AuthService } from '../services/auth.service';
 export class PassengerComponent implements OnInit {
   passagers: any = [];
 
-  constructor(public authService: AuthService, private passengerService: PassengerService) {}
+  constructor(private passengerService: PassengerService) {}
 
   // on recupere les passagers
   ngOnInit(): void {

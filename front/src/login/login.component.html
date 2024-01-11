@@ -1,5 +1,4 @@
-
-
+<!-- <form>
 <div class="formulaire">
     <label>Votre email : </label>
     <input [(ngModel)]="email" type="text" placeholder="toto@test.fr">
@@ -9,3 +8,17 @@
     <br><br>
     <button (click)="onLogin()">Valider</button>
 </div>
+</form> -->
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" placeholder="toto@test.fr" />
+    </div>
+    <div>
+      <label for="password">Mot de passe:</label>
+      <input type="password" id="password" formControlName="password" placeholder="toto"/>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+  </form>
+  

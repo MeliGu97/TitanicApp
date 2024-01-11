@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { PageMembreComponent } from '../page-membre/page-membre.component';
 import { FormsModule } from '@angular/forms';
-import { GuardService } from '../services/guard.service';
+import { AuthGuardService } from '../auth/auth.guard';
 
 export const routes : Routes = [
   {
@@ -13,7 +13,7 @@ export const routes : Routes = [
   },
   {
     path: 'page-membre', 
-    canActivate: [GuardService],
+    //canActivate: [AuthGuardService],
     component: PageMembreComponent
 },
 ]

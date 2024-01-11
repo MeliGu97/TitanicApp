@@ -60,3 +60,7 @@ button:hover {
   border: #5bbac7;
   color: white;
 }
+
+button:disabled {
+    background-color: #d51616;
+}

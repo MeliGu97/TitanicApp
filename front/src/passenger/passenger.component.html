@@ -1,6 +1,6 @@
 <H2>Liste des passagers du Titanic</H2>
 
-<section *ngIf="authService.isAuth(); notAuthenticated">
+<section>
   <article>
     <div class="header"> <!-- pas encore fonctionnel -->
       <input type="text" placeholder="Rechercher par nom" id="searchInput">
@@ -48,10 +48,3 @@
     </div>  
   </article>
 </section>
-
-<!-- pour afficher touuuutes les données dans une liste -->
-<ul #notAuthenticated>
-  <li *ngFor="let passager of passagers">
-    {{ passager.Name }}
-  </li>
-</ul>

@@ -1,2 +1,4 @@
-
-<titanic-passenger></titanic-passenger>
+<titanic-passenger *ngIf="authService.getIsAuthenticated(); else notAuthenticated"></titanic-passenger>
+<ng-template #notAuthenticated>
+    <p>vous n'avez pas accès, reservez aux membres, connectez-vous svp</p>
+</ng-template>
