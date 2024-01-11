@@ -1,4 +1,106 @@
-<titanic-passenger *ngIf="authService.getIsAuthenticated(); else notAuthenticated"></titanic-passenger>
+<!-- <titanic-passenger *ngIf="authService.getIsAuthenticated(); else notAuthenticated"></titanic-passenger>
 <ng-template #notAuthenticated>
-    <p>vous n'avez pas accès, reservez aux membres, connectez-vous svp</p>
+    <p>Vous n'avez pas accès, cette page est reservée aux membres, connectez-vous svp</p>
+</ng-template> -->
+
+
+<section  *ngIf="authService.getIsAuthenticated(); else notAuthenticated">
+    <H2>Liste des passagers du Titanic</H2>
+  <article>
+    <div class="header"> <!-- pas encore fonctionnel -->
+      <!-- <input type="text" placeholder="Rechercher par nom" id="searchInput"> -->
+
+      <div class="container-filters filters">
+          <label class="toggle-switch">
+              Femme ♀️ 
+              <input type="checkbox" id="genderFilter">
+              <span class="toggle-slider"></span>
+              Homme ♂️
+          </label>
+        </div>
+        <div class="container-filters filters">
+          <label class="toggle-switch">
+              Décédé 🕊️
+              <input type="checkbox" id="survivorFilter">
+              <span class="toggle-slider"></span>
+              Survivant ❤️
+          </label>
+          
+          
+      </div>
+    </div>
+  </article>
+
+
+  <article>
+    <div>
+      <div class="card" *ngFor="let passager of passagers">
+        <div class="card-img">
+          <div class="card-imgs cartSup">
+            <p class="name">{{ passager.Name }}</p>
+          </div>
+        </div>
+        <div class="carte-principale">
+          <div class="flex">
+            <div class="carte-title">
+              {{ passager.Sex === 'female' ? '♀️' : '♂️' }}
+              {{ ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18'].includes(passager.Age) ? '👶' : '🧑' }}
+              <br>
+              {{ passager.Survived === '1' ? '❤️' : '🕊️' }}
+            </div>
+            <span class="tag">
+              <p>
+                Tiquet N°: {{ passager.Ticket }}
+                <br>
+                Cabine : {{ passager.Cabin }}
+                <br>
+                Porte : {{ passager.Embarked }}
+              </p>
+            </span>
+          </div>
+          <div class="space"></div>
+          <span>
+            <p>
+              Sexe : {{ passager.Sex }} - Age : {{ passager.Age }} ans
+              <br>
+              {{ passager.Pclass }}e
+            </p>
+            <p class="tag">
+              sibSp : {{ passager.SibSp }} - Fare : {{ passager.Fare }} - Parch : {{ passager.Parch }}
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="passenger-card" *ngFor="let passager of passagers">
+      <h2>{{ passager.Name }}</h2>
+      <div class="info">
+        <p><strong>PassengerId:</strong> {{ passager.PassengerId }}</p>
+        <p>
+          <strong>Survived:</strong> {{ passager.Survived }}
+          <strong>Pclass:</strong> {{ passager.Pclass }}
+        </p>
+        <p>
+          <strong>Sex:</strong> {{ passager.Sex }}
+          <strong>Age:</strong> {{ passager.Age }}
+        </p>
+        <p><strong>SibSp:</strong> {{ passager.SibSp }}</p>
+        <p><strong>Parch:</strong> {{ passager.Parch }}</p>
+        <p><strong>Ticket:</strong> {{ passager.Ticket }}</p>
+        <p><strong>Fare:</strong> {{ passager.Fare }}</p>
+        <p><strong>Cabin:</strong> {{ passager.Cabin }}</p>
+        <p><strong>Embarked:</strong> {{ passager.Embarked }}</p>
+      </div>
+    </div>   -->
+  </article>
+</section>
+<ng-template #notAuthenticated>
+    <div class="popUp">
+        <p class="texteInsidePopUp">
+            Vous n'avez pas accès à cette page, elle est reservée aux membres.
+            <br><br>
+            Connectez-vous s'il vous plait.
+        </p>
+    </div>
 </ng-template>

@@ -10,6 +10,7 @@
 input{
     width: 98%;
     margin-right: 10px;
+    margin-bottom: 10px;
     background-color: rgb(246, 246, 246);
     color: #242424;
     padding: .15rem .5rem;
@@ -32,6 +33,7 @@ input:hover {
 button{
     display: block;
     margin: auto;
+    margin-top: 10px;
     background-color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 4px;
@@ -62,5 +64,9 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #d51616;
+    background-color: #c7c7c7;
+    border: #c7c7c7;
+    color: black;
+    box-shadow: rgba(0, 0, 0, .0) 0 0px 0px 0;
+    transform: none;
 }

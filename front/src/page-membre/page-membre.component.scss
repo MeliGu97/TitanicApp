@@ -1,0 +1,206 @@
+
+.container-filters{
+    width: 250px;
+}
+.filters {
+    padding: 10px;
+    display: inline-block;
+    // display: flex;
+    // align-items: center; /* Aligner les éléments verticalement */
+    justify-content: space-between;
+}
+
+// -------------------------
+
+#searchInput {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-slider {
+    width: 40px;
+    height: 20px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ccc;
+    left: 2px;
+    top: 1px;
+    transition: 0.3s;
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+    left: 20px;
+    background-color: #5bbac7; /* Couleur quand activé */
+}
+
+// --------------------------------------
+
+
+// .passenger-cards-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+// }
+
+// .passenger-card {
+//     background-color: #5bbac777; /* Couleur rappelant l'eau froide */
+//     border-radius: 10px;
+//     padding: 20px;
+//     margin: 2%;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     width: 300px;
+//     box-sizing: border-box;
+//     display: inline-block;
+// }
+
+// .passenger-card h2 {
+//     margin-bottom: 10px;
+//     color: #333;
+// }
+
+// .passenger-info {
+//     margin-bottom: 10px;
+// }
+
+// .passenger-info span {
+//     font-weight: bold;
+//     color: #555;
+// }
+
+// --------------------------
+
+.popUp{
+    margin: auto;
+    display: block;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.texteInsidePopUp{
+    color: rgb(190, 7, 7); 
+    padding: 30px;
+    text-align: center;
+}
+// --------------------------
+
+
+
+.carte-principale {
+    padding: 5px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: -50px;
+  }
+  
+  .carte-title {
+    font-weight: 700;
+    font-size: 1.3em;
+    overflow: hidden;
+    // text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+//   .account {
+//     font-weight: bold;
+//   }
+  
+  .tag {
+    font-weight: lighter;
+    color: grey;
+  }
+
+  .cartSup {
+    background-color: #3d87bd89;
+    text-align: center;
+  }
+  
+  .card-img div {
+    width: 90%;
+  }
+  .name{
+    padding: 10px;
+  }
+
+  
+  .card {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: white;
+    color: black;
+    width: 300px;
+    max-height: 250px;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    display: inline-block;
+    margin: 2%;
+  }
+  
+  .card-img {
+    position: relative;
+    top: -15px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-img a,
+  .card-img div {
+    height: 60px;
+    width: 85%;
+    /* Change this width here to change the width of the color/image */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .space{
+    top: 0px;
+    height: 1px;
+    width: 100%;
+    display: block;
+    background-color: grey;;
+  }
+  
+//   .pv:hover {
+//     transform: scale(1.12);
+//   }
+  
+//   .card-imgs {
+//     transition: all 0.5s;
+//   }
+  
