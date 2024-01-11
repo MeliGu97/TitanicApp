@@ -19,13 +19,21 @@
           </label>
         </div>
         <div class="container-filters filters">
-          <label class="toggle-switch">
+          <!-- <label class="toggle-switch">
               Décédé 🕊️
               <input type="checkbox" id="survivorFilter">
               <span class="toggle-slider"></span>
               Survivant ❤️
+          </label> -->
+          <label>
+            <input type="radio" name="survivalStatus" (click)="onClickMortOuVif(0)"> Décédé 🕊️
           </label>
-          
+          <label>
+            <input type="radio" name="survivalStatus" (click)="onClickMortOuVif(1)"> Survivant ❤️
+          </label>
+          <label>
+            <input type="radio" name="survivalStatus" (click)="ngOnInit()"> Tous 🕊️+❤️
+          </label>
           
       </div>
     </div>
@@ -63,7 +71,7 @@
             <p>
               Sexe : {{ passager.Sex }} - Age : {{ passager.Age }} ans
               <br>
-              {{ passager.Pclass }}e
+              {{ passager.Pclass }}e classe
             </p>
             <p class="tag">
               sibSp : {{ passager.SibSp }} - Fare : {{ passager.Fare }} - Parch : {{ passager.Parch }}
