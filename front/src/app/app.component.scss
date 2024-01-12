@@ -18,3 +18,118 @@
     width: 100%;
     height: auto;
 }
+
+.titanic2parties {
+    width: 50%; 
+    height: auto; 
+    z-index: -200; // ne fonctionne pas
+    transition: transform 3s; 
+}
+
+.contient-titanic{
+    height: auto;
+    width: 600px;
+    margin: auto;
+}
+.cote-a-cote{
+    width: 50%;
+    display: inline-block;
+}
+.titanic-gauche{
+    background-image: url(../assets/titanicSeulgauche.png);
+    background-size: 100% auto; // hauteur puis largeur
+    background-repeat: no-repeat;
+    height: 200px;// important si on veut qu'elle s'affiche alors que div vide
+}
+.titanic-droite{
+    background-image: url(../assets/titanicSeuldroite.png);
+    background-size: 100% auto; // hauteur puis largeur
+    background-repeat: no-repeat;
+    height: 200px;
+
+}
+.fondAmovible{
+    margin-top: 400px;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+ }
+
+@keyframes rotateLeft {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-25deg); 
+    }
+}
+
+@keyframes rotateRight {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(25deg); 
+    }
+}
+
+.rotate-left {
+    animation: rotateLeft 1s forwards; 
+    animation-delay: 3s;
+}
+
+.rotate-right {
+    animation: rotateRight 1s forwards; 
+    animation-delay: 3s;
+}
+
+
+.iceberg{
+    background-image: url(../assets/icebergIlluSansFond.png);
+    background-size: auto 100%; // // largeur puis hauteur !!
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+    margin-top: -80px;
+    // margin-bottom: -400px;
+}
+
+.slide-top {
+	-webkit-animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation-delay: 2.8s;
+}
+
+ @-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+  
+
+  .titre{
+    font-family: ui-monospace;
+    color : red;
+    font-size: 160px;
+    text-align: center;
+    margin-bottom: -80px;
+    margin-top: 0;
+  }
+  .titre-gauche{
+    text-align: right;
+  }

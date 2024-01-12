@@ -5,9 +5,23 @@
     </ng-template>
 </nav>
 <nav>
+    <button class="nav-item" (click)="router.navigate([''])">Accueil</button>
     <button class="nav-item" (click)="router.navigate(['/page-visiteur'])">Données brutes</button>
     <button class="nav-item" *ngIf="authService.getIsAuthenticated();" (click)="router.navigate(['/page-membre'])">Interroger les données</button>
-    
 </nav>
-<!-- <img class="photoLargest" src="../assets/iceberg.jpg" alt="Photo iceberg" /> -->
-<router-outlet></router-outlet>
+<div>
+    <div class="contient-titanic">
+        <p class="titre">Titanic</p>
+        <div class="cote-a-cote rotate-left">
+            <!-- <p class="titre titre-gauche">TIT</p> -->
+            <div class="titanic-gauche"></div>
+        </div>
+        <div class="cote-a-cote rotate-right">
+            <!-- <p class="titre">ANIC</p> -->
+            <div class="titanic-droite"></div>
+        </div>
+    </div>
+    <!-- <div class="iceberg slide-top"></div> -->
+    <router-outlet></router-outlet>
+</div>
+

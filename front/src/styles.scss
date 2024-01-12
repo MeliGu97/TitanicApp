@@ -1,4 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; padding: 20px; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+    height: 100%; 
+    
+}
+body { 
+    margin: 0; 
+    font-family: "Gill Sans Extrabold", sans-serif;
+
+
+}
+
+.popUp{
+    background-color: white;
+    margin: auto;
+    display: block;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.texteInsidePopUp{
+    color: rgb(190, 7, 7); 
+    padding: 30px;
+    text-align: center;
+}
+
+.card-transparence{
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+}
+h1{
+    text-align: center;
+
+}

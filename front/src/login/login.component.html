@@ -1,5 +1,10 @@
 <section  *ngIf="authService.getIsAuthenticated(); else formulaire">
-  <p></p>
+  <div class="popUp">
+    <p class="texteInsidePopUp">
+      Vous êtes maintenant connecté
+    </p>
+</div>
+
 </section>
 <ng-template #formulaire>
   <form class="formulaire" [formGroup]="loginForm" (ngSubmit)="onSubmit()">

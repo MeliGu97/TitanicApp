@@ -7,8 +7,13 @@ import { PageVisiteurComponent } from '../page-visiteur/page-visiteur.component'
 import { FormsModule } from '@angular/forms';
 import { AuthGuardService } from '../auth/auth.guard';
 import { PassengerComponent } from '../passenger/passenger.component';
+import { homeComponent } from '../home/homre.component';
 
 export const routes : Routes = [
+  {
+    path: '',
+    component: homeComponent
+  },
   {
     path: 'login',
     component: LoginComponent
@@ -22,14 +27,7 @@ export const routes : Routes = [
     //canActivate: [AuthGuardService],
     component: PageMembreComponent
   },
-  // {
-  //   path: '/passengers/Survived/:0',
-  //   component: PassengerComponent
-  // },
-  // {
-  //   path: '/passengers/Survived/:1',
-  //   component: PassengerComponent
-  // },
+
 ]
 
 @NgModule({
