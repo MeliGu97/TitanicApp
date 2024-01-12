@@ -5,9 +5,11 @@ import { log } from "console";
 import { readFile, writeFile } from 'node:fs/promises';
 import path from "path";
 import { Utilisateur } from "./app";
+import { Passenger } from "./Passenger";
 
 const csvFilePath: string | undefined = process.env.DATA_URL;
 const pathStatJSON = path.join(__dirname, `../src/${csvFilePath}/stat.json`);
+const pathGenreJSON = path.join(__dirname, `../src/${csvFilePath}/genre.json`);
 
 const router: Router = express.Router();
 
@@ -24,6 +26,19 @@ router.get("/passengers/Survived/:status", async function (req: Request, res: Re
 
     res.json(data);
 });
+
+router.get("/passengers/Genre/:genre", async function (req: Request, res: Response) {
+    const genre: string = req.params.genre;
+    const data = await PassengersGenre(genre);
+    res.json(data);
+});
+
+async function PassengersGenre(genre: string) {
+    const data = await Passengers();
+    const filteredData = data.filter((passenger: Passenger) => passenger.Sex.toLowerCase() === genre.toLowerCase());
+    return filteredData;
+}
+
 
 router.post("/stat", async function (req: Request, res: Response) {
     const { Survived, SexAgePclass }: { Survived: string, SexAgePclass: string } = req.body;

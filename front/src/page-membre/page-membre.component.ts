@@ -32,4 +32,12 @@ export class PageMembreComponent implements OnInit {
       this.passagers = data;
     });
   }
+
+  onClickGenre(genre: string) {
+    this.passengerService.getPassagerGenre(genre).subscribe((data) => {
+      console.log("Genre filter", data);
+      this.passagers = data;
+    });
+  }
+  
 }

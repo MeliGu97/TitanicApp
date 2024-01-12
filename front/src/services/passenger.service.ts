@@ -15,4 +15,8 @@ export class PassengerService {
   getPassagerStatus(status: number){
     return this.http.get('http://localhost:3002/api/passengers/Survived/'+status);
   }
+
+  getPassagerGenre(genre: string) {
+    return this.http.get(`http://localhost:3002/api/passengers/Genre/${genre}`);
+  }
 }

@@ -35,6 +35,17 @@
             <input type="radio" name="survivalStatus" (click)="ngOnInit()"> Tous 🕊️+❤️
           </label>
           
+          |
+          <label>
+            <input type="radio" name="passengerGenre" (click)="onClickGenre('female')"> Femme ♀️
+          </label>
+          <label>
+            <input type="radio" name="passengerGenre" (click)="onClickGenre('male')"> Homme ♂️
+          </label>
+          <label>
+            <input type="radio" name="passengerGenre" (click)="ngOnInit()"> Tous ♀️+♂️
+          </label>
+        
       </div>
     </div>
   </article>
@@ -67,15 +78,20 @@
             </span>
           </div>
           <div class="space"></div>
-          <span>
+          <span class="description">
             <p>
-              Sexe : {{ passager.Sex }} - Age : {{ passager.Age }} ans
+              Sexe : <strong>{{ passager.Sex === 'female' ? 'Femme' : 'Homme' }}</strong> 
               <br>
-              {{ passager.Pclass }}e classe
+              Age : <strong>{{ passager.Age }} ans</strong>
+              <br>
+              <strong>{{ passager.Pclass }}e classe</strong>
             </p>
             <p class="tag">
-              sibSp : {{ passager.SibSp }} - Fare : {{ passager.Fare }} - Parch : {{ passager.Parch }}
+              Prix du billet : {{ passager.Fare }}$
             </p>
+            <!-- <p class="tag">
+              sibSp : {{ passager.SibSp }} - {{ passager.Fare }}$ - Parch : {{ passager.Parch }}
+            </p> -->
           </span>
         </div>
       </div>

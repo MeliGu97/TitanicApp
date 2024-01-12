@@ -2,7 +2,7 @@ section{
   padding: 20px;
 }
 .container-filters{
-    width: 400px;
+    width: 100%;
     margin-left: 40px;
 }
 .filters {
@@ -59,7 +59,10 @@ section{
   .name{
     padding: 5px, 10px, 10px, 10px;
   }
-
+  .description{
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+  }
   
   .card {
     flex-wrap: wrap;
