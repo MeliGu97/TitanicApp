@@ -69,4 +69,138 @@ button:disabled {
     color: black;
     box-shadow: rgba(0, 0, 0, .0) 0 0px 0px 0;
     transform: none;
+
 }
+
+
+// Billet 
+.billet-embarquement{
+    background: linear-gradient(310deg, #d3ba9f 0%, #f2e9d4 50%, #f3eee4 100%);
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 100px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.encadrer-principal{
+    border: solid 3px black;
+    box-sizing: border-box;
+}
+.logo{
+    width: 100px;
+    margin: auto;
+    display: block;
+    // background-color: brown;
+}
+.titre-billet{
+    font-size: 40px;
+    margin: 0px;
+}
+.titre-billet,
+.compagnie-name,
+.contenu-billet,
+.info-impri{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    margin: 0px;
+}
+.encadrer{
+    border: solid 1.5px black;
+    margin: 15px;
+}
+
+.floriture{
+    width: 80px;
+    margin: auto;
+    display: block;
+    margin-bottom: 0px;
+}
+.double-ligne-haut-bas{
+    border-top-style: double;
+    border-bottom-style: double;
+}
+
+.texte-rouge{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: brown;
+    text-align: center;
+    font-size: 50px;
+    margin: 0px;
+}
+.souligner{
+    text-decoration: underline;
+    margin: 0px;
+}
+.compagnie-name{
+    font-size: 20px;
+}
+.rms{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    margin: 0px;
+    letter-spacing: .2rem;
+    font-stretch : expanded;
+}
+.texte-big{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    margin: 0px;
+    letter-spacing: .3rem;
+    font-stretch : expanded;
+}
+.info-impri{
+    margin-bottom: 10px;
+}
+
+// anim
+
+.swirl-in-fwd {
+	-webkit-animation: swirl-in-fwd 0.6s ease-out both;
+	        animation: swirl-in-fwd 0.6s ease-out both;
+}
+
+ @-webkit-keyframes swirl-in-fwd {
+    0% {
+      -webkit-transform: rotate(-540deg) scale(0);
+              transform: rotate(-540deg) scale(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0) scale(1);
+              transform: rotate(0) scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes swirl-in-fwd {
+    0% {
+      -webkit-transform: rotate(-540deg) scale(0);
+              transform: rotate(-540deg) scale(0);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(0) scale(1);
+              transform: rotate(0) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .ligne{
+    top: 0px;
+    height: 1.5px;
+    width: 100%;
+    display: block;
+    background-color: black;
+  }
+  .espacement{
+    margin-top: 3px;
+  }
+  .ligne-fin{
+    top: 0px;
+    height: 3px;
+    width: 90%;
+    margin: auto;
+    display: block;
+    background-color: black;
+    margin-bottom: 3px;
+  }

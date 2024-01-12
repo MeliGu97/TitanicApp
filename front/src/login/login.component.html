@@ -1,11 +1,46 @@
-<section  *ngIf="authService.getIsAuthenticated(); else formulaire">
-  <div class="popUp">
+<section *ngIf="authService.getIsAuthenticated(); else formulaire">
+  <!-- <div class="popUp">
     <p class="texteInsidePopUp">
       Vous êtes maintenant connecté
     </p>
-</div>
+</div> -->
+  <div class="billet-embarquement swirl-in-fwd">
+    <div class="encadrer-principal">
+      <img class="logo" src="../assets/1024px-WhiteStarLogo.svg.png">
+      <p class="titre-billet">WHITE STAR LINE</p>
+      <div class="encadrer">
+        <img class="floriture" src="../assets/floriture.png">
+        <div class="ligne"></div>
+        <div class="ligne espacement"></div>
+        <p class="texte-rouge">BOARDING PASS</p>
+        <div class="ligne"></div>
+        <div class="ligne espacement"></div>
+        <img class="floriture" src="../assets/floriture.png">
+        <div class="contenu-billet">
+          <p class="souligner">PERMISSION GRANTED TO COME ABOARD</p>
+          <P class="compagnie-name">WHITE STAR LINES</P>
+          <p class="rms">R.M.S</p>
+          <p class="texte-big">TITANIC</p>
+          <div class="ligne-fin"></div>
+        </div>
+      </div>
+      <p class="info-impri">
+        ISMAY.IMPRIE & CO.
+        <br>
+        34, LEADENHAL L STREET, LONDON
+        <br>
+        AND
+        <br>
+        10 WATER STREET, LIVERPOOL
+      </p>
+    </div>
+
+  </div>
 
 </section>
+
+
+
 <ng-template #formulaire>
   <form class="formulaire" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>

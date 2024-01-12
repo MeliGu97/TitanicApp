@@ -4,9 +4,9 @@
         <button class="nav-item" (click)="router.navigate(['/login'])">Se connecter</button>
     </ng-template>
 </nav>
-<nav>
+<nav class="menu-horizontal">
     <button class="nav-item" (click)="router.navigate([''])">Accueil</button>
-    <button class="nav-item" (click)="router.navigate(['/page-visiteur'])">Données brutes</button>
+    <button class="nav-item" (click)="router.navigate(['/page-visiteur'])">Liste des passagers</button>
     <button class="nav-item" *ngIf="authService.getIsAuthenticated();" (click)="router.navigate(['/page-membre'])">Interroger les données</button>
 </nav>
 <div>

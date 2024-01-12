@@ -1,16 +1,54 @@
 .container-paragraphe{
     width: 30%;
-    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 5%;
-    padding: 10px;
+    margin-left: 14%;
+    padding: 20px;
     display: inline-block;
+    vertical-align: top;
 }
-.boite-a-image{
-    width: 60%;
+
+.container-paragraphe-large{
+    width: 70%;
+    margin: 5%;
+    margin-left: 14%;
+    padding: 20px;
     display: inline-block;
+    vertical-align: top;
+}
+
+.colonnes-deux{
+    column-count: 2;
+    column-gap: 100px;
+}
+
+.texte-blanc{
+    color: white;
+}
+// ---------- les images / fonds
+
+.boite-a-image{
+    width: 50%;
+    display: inline-block;
+    // background-color: brown;
 }
 .img-dans-container{
-    width: 50%;
+    width: 80%;
     height: auto;
+    margin-left: 5%;
+    margin-bottom: -50px;
+}
+.fond-colorer-large{
+    background-color:brown;
+}
+.fond-titanic{
+    background-image: url(../assets/Titanic-derniere-photo-e1678808326953-1260x710.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 450px;
+}
+
+.fond-pour-texte-sur-img{
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.535)
 }

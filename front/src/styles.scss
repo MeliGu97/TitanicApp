@@ -2,6 +2,7 @@
 html, body { 
     height: 100%; 
     
+    
 }
 body { 
     margin: 0; 
@@ -24,13 +25,19 @@ body {
     text-align: center;
 }
 
-.card-transparence{
-    border-radius: 10px;
-    backdrop-filter: blur(30px);
-    background-color: rgba(65, 65, 65, 0.308);
-    border: 1px solid rgba(255, 255, 255, 0.089);
-}
+// .card-transparence{
+//     border-radius: 10px;
+//     backdrop-filter: blur(30px);
+//     background-color: rgba(65, 65, 65, 0.308);
+//     border: 1px solid rgba(255, 255, 255, 0.089);
+// }
 h1{
     text-align: center;
-
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    border: 1px solid white;
+    margin-top: -10px;
+}
+h3{
+    font-weight: bold;
 }
